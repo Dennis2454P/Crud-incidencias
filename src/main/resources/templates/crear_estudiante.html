@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registro de estudiantes</title>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-light navbar-dark">
+		<a class="navbar-brand" href="#">incidencias de errores</a>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/estudiantes}"><h3 style="color:black; aling-items:right">Regresar</h3></a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <br>
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+              <h1 class="text-center">Registro de incidencias</h1>
+              <div class="card-body">
+                 <form th:action="@{/estudiantes}" th:object="${estudiante}" method="POST">
+                    <div class="form-group" style="width:50%; margin: 0 auto;" >
+                       <label>Nombre del estudiante: </label>
+                        <select name="nombre" th:field="*{nombre}" class="form-control" required>
+                        <option value="">Seleccione un estudiante</option>
+                        <option value="Dennis">Dennis</option>
+                        <option value="Sharmili">Sharmili</option>
+                        <option value="Renzo">Renzo</option>
+                    </select>
+                    </div>
+                    
+                    <div class="form-group">
+                       <label>Descripcion de la incidencia: </label>
+                       <input type="text" name="apellido" th:field="*{apellido}" class="form-control" placeholder="Digite una descripcion: " required>
+                    </div>
+                    
+                    <div class="form-group">
+                       <label>solucion : </label>
+                       <input type="text" name="email" th:field="*{email}" class="form-control" placeholder="Proponga una solucion : " required>
+                    </div>
+                     <div class="form-group">
+                         <label>severidad : </label>
+
+                         <select name="severidad" th:field="*{severidad}" class="form-control" required>
+                             <option value="">Seleccione una severidad</option>
+                             <option value="baja">Baja</option>
+                             <option value="media">Media</option>
+                             <option value="alta">Alta</option>
+                         </select>
+                     </div>
+                     <div class="form-group">
+                         <label>titulo : </label>
+                         <input type="text" name="titulo" th:field="*{titulo}" class="form-control" placeholder="titulo de la incidencia " required>
+                     </div>
+                    <div class="box-footer">
+                       <button class="btn btn-secondary" style="width:50%; margin-left:25%"> Guardar</button>
+                    </div>
+                 </form>
+              </div>
+          </div>
+       </div>
+    </div>
+</body>
+</html>
