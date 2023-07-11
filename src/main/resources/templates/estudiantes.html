@@ -38,19 +38,19 @@
 					<th>titulo</th>
 					<th>severidad</th>
 					<th>Reportado por</th>
-					<th>Descripcion</th>
 					<th>Solucion</th>
+					<th>Descripcion</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="estudiante : ${estudiantes}">
 					<td th:text="${estudiante.id}"></td>
-					<td th:text="${estudiante.titulo}">Nofg</td>
-					<td th:text="${estudiante.severidad}">Nomfgssssrddde</td>
-					<td th:text="${estudiante.nombre}">Nombssssrddde</td>
-					<td th:text="${estudiante.apellido}">Apellido</td>
-					<td th:text="${estudiante.email}">Email</td>
+					<td th:text="${estudiante.titulo}"></td>
+					<td th:text="${estudiante.severidad}"></td>
+					<td th:text="${estudiante.nombre}"></td>
+						<td th:text="${estudiante.solucion}"></td>
+                        <td th:text="${estudiante.reportado}"></td>
 					<td>
 
 					  <a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-warning">Eliminar</a>

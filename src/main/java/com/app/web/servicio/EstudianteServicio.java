@@ -3,6 +3,7 @@ package com.app.web.servicio;
 import java.util.List;
 
 import com.app.web.entidad.Estudiante;
+import org.apache.catalina.User;
 
 public interface EstudianteServicio {
 
@@ -15,4 +16,5 @@ public interface EstudianteServicio {
 	public Estudiante actualizarEstudiante(Estudiante estudiante);
 	
 	public void eliminarEstudiante(Long id);
+
 }

@@ -7,5 +7,6 @@ import com.app.web.entidad.Estudiante;
 
 @Repository
 public interface EstudianteRepositorio extends JpaRepository<Estudiante, Long>{
+    Estudiante findAllById(Long id);
 
 }

@@ -4,11 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import com.app.web.entidad.Estudiante;
 import com.app.web.servicio.EstudianteServicio;
-
-import java.util.List;
 
 @Controller
 public class EstudianteControlador {
@@ -38,10 +35,11 @@ public class EstudianteControlador {
 
      try{servicio.guardarEstudiante(estudiante);
 		 return "redirect:/estudiantes";}
-	 catch(Exception e){ return "redirect:/error";
-	 }
+	 catch(Exception e){ return "redirect:/error";}
 
 	}
+
+
 
 	@GetMapping("/estudiantes/editar/{id}")
 	public String mostrarFormularioDeEditar(@PathVariable Long id, Model modelo) {
@@ -57,8 +55,8 @@ public class EstudianteControlador {
 		estudianteExistente.setTitulo(estudiante.getTitulo());
 		estudianteExistente.setSeveridad(estudiante.getSeveridad());
 		estudianteExistente.setNombre(estudiante.getNombre());
-		estudianteExistente.setApellido(estudiante.getApellido());
-		estudianteExistente.setEmail(estudiante.getEmail());
+		estudianteExistente.setSolucion(estudiante.getSolucion());
+		estudianteExistente.setReportado (estudiante.getReportado());
 
 		servicio.actualizarEstudiante(estudianteExistente);
 		return "redirect:/estudiantes";

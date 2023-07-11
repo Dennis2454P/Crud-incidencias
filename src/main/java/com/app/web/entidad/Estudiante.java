@@ -15,50 +15,36 @@ public class Estudiante {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nombre",nullable = false,length = 50)
+	@Column(name = "nombre")
 	private String nombre;
 	
-	@Column(name = "apellido",nullable = false,length = 50)
-	private String apellido;
+	@Column(name = "apellido")
+	private String solucion;
 	
-	@Column(name = "email",nullable = false,length = 50)
-	private String email;
-	@Column(name = "titulo",nullable = false,length = 50)
+	@Column(name = "email")
+	private String reportado;
+	@Column(name = "titulo")
 	private String titulo;
 
-	@Column(name = "severidad",nullable = false,length = 50)
+	@Column(name = "severidad")
 	private String severidad;
 
-	public Estudiante() {
-		
-	}
+	//public Estudiante(long l, String s) {}
 
-	public Estudiante(Long id, String nombre, String apellido, String email, String titulo, String severidad) {
+	public Estudiante(){
+
+	}
+	public Estudiante(Long id, String nombre,String solucion, String reportado, String titulo, String severidad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.apellido = apellido;
-		this.email = email;
+		this.solucion = solucion;
+		this.reportado = reportado;
 		this.titulo = titulo;
 		this.severidad = severidad;
 	}
 
-	public Estudiante(Long id, String nombre, String apellido, String email) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.email = email;
-	}
-	
-	public Estudiante( String nombre, String apellido, String email, String titulo, String severidad) {
-		super();
-		this.titulo=titulo;
-		this.severidad=severidad;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.email = email;
-	}
+
 
 	public Long getId() {
 		return id;
@@ -75,21 +61,20 @@ public class Estudiante {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public String getApellido() {
-		return apellido;
+	public String getSolucion() {
+		return solucion;
 	}
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setReportado(String apellido) {
+		this.solucion = apellido;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getReportado() {
+		return reportado;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setSolucion(String email) {
+		this.reportado = email;
 	}
 
 	public String getTitulo() {
@@ -113,8 +98,8 @@ public class Estudiante {
 		return "Estudiante[" +
 				"id=" + id +
 				", nombre='" + nombre + '\'' +
-				", apellido='" + apellido + '\'' +
-				", email='" + email + '\'' +
+			//	", solucion='" + solucion + '\'' +
+			//	", reportado='" + reportado + '\'' +
 				", titulo='" + titulo + '\'' +
 				", severidad='" + severidad + '\'' +
 				']';

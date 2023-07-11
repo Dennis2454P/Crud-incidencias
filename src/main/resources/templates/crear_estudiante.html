@@ -29,7 +29,7 @@
                  <form th:action="@{/estudiantes}" th:object="${estudiante}" method="POST">
                     <div class="form-group" style="width:50%; margin: 0 auto;" >
                        <label>Nombre del estudiante: </label>
-                        <select name="nombre" th:field="*{nombre}" class="form-control" required>
+                        <select name="nombre" th:field="*{nombre}" class="form-control" >
                         <option value="">Seleccione un estudiante</option>
                         <option value="Dennis">Dennis</option>
                         <option value="Sharmili">Sharmili</option>
@@ -39,17 +39,17 @@
                     
                     <div class="form-group">
                        <label>Descripcion de la incidencia: </label>
-                       <input type="text" name="apellido" th:field="*{apellido}" class="form-control" placeholder="Digite una descripcion: " required>
+                       <input type="text" name="apellido" th:field="*{solucion}" class="form-control" placeholder="Digite una descripcion: ">
                     </div>
-                    
+
                     <div class="form-group">
                        <label>solucion : </label>
-                       <input type="text" name="email" th:field="*{email}" class="form-control" placeholder="Proponga una solucion : " required>
+                       <input type="text" name="email" th:field="*{reportado}" class="form-control" placeholder="Proponga una solucion : " >
                     </div>
                      <div class="form-group">
                          <label>severidad : </label>
 
-                         <select name="severidad" th:field="*{severidad}" class="form-control" required>
+                         <select name="severidad" th:field="*{severidad}" class="form-control">
                              <option value="">Seleccione una severidad</option>
                              <option value="baja">Baja</option>
                              <option value="media">Media</option>
@@ -58,7 +58,7 @@
                      </div>
                      <div class="form-group">
                          <label>titulo : </label>
-                         <input type="text" name="titulo" th:field="*{titulo}" class="form-control" placeholder="titulo de la incidencia " required>
+                         <input type="text" name="titulo" th:field="*{titulo}" class="form-control" placeholder="titulo de la incidencia " >
                      </div>
                     <div class="box-footer">
                        <button class="btn btn-secondary" style="width:50%; margin-left:25%"> Guardar</button>
